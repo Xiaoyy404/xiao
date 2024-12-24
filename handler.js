@@ -533,7 +533,7 @@ export async function handler(chatUpdate) {
             if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
             if (settings) {
                 if (!('self' in settings)) settings.self = false
-                if (!('autoread' in settings)) settings.autoread = true
+                if (!('autoread' in settings)) settings.autoread = false
                 if (!('composing' in settings)) settings.composing = false
                 if (!('restrict' in settings)) settings.restrict = true
                 if (!('autorestart' in settings)) settings.autorestart = true
@@ -546,7 +546,7 @@ export async function handler(chatUpdate) {
                 if (!('anticall' in settings)) settings.anticall = true
             } else global.db.data.settings[this.user.jid] = {
                 self: false,
-                autoread: true,
+                autoread: false,
                 composing: false,
                 restrict: true,
                 autorestart: true,
